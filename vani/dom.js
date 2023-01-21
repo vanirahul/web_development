@@ -28,33 +28,36 @@ var header=document.getElementById('main-header');
 
  
 header.style.borderBottom ='solid 3px black';
-var title=document.getElementById('title');
- title.style.color ='green';
- title.style.fontWeight ='bold';
+// var title=document.getElementById('title');
+//  title.style.color ='green';
+//  title.style.fontWeight ='bold';
 
 //get elements by classname
 
- //var items =document.getElementsByClassName('list-group-item');
+ var items =document.getElementsByClassName('list-group-item');
 // console.log(items);
 // console.log(items[1]);
 // items[0].textContent = 'Hello 2';
  //items[0].style.fontWeight = 'bold';
- //items[0].style.color = 'yellow';
+ items[2].style.backgroundColor = 'green';
 
-//  var items =document.getElementsByClassName('title');
+ // var items =document.getElementsByClassName('title');
 //  items[0].style.color='green';
 // items[0].style.innerText='bold';
-// for(var i=0; i< items.length;i++){
-//     items[i].style.backgroundColor ='grey';
-// }
+ for(var i=0; i< items.length;i++){
+     items[i].style.fontWeight ='bold';
+ }
 
 //get elements by tag names
-// var li =document.getElementsByTagName('li');
+//var li =document.getElementsByTagName('li');
 // console.log(li);
 // console.log(li[1]);
 // li[1].textContent = 'Hello 2';
-// li[1].style.fontWeight = 'bold';
-// li[1].style.backgroundColor = 'yellow';
+//  li[0].style.fontWeight = 'bold';
+//  li[1].style.fontWeight = 'bold';
+//  li[2].style.fontWeight = 'bold';
+//  li[3].style.fontWeight = 'bold';
+//  li[2].style.backgroundColor = 'green';
 
 // for(var i=0; i< li.length;i++){
 //    li[i].style.backgroundColor ='grey';
@@ -77,6 +80,9 @@ var title=document.getElementById('title');
 
 //  var secondItem = document.querySelector('.list-group-item:nth-child(2)');
 // secondItem.style.color = 'coral';
+
+// var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+//  thirdItem.style.backgroundcolor = 'green';
 
 //queryselectorall//
  //var titles = document.querySelectorAll('#title');
