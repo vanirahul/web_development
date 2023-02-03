@@ -1,19 +1,59 @@
- //using Queryselector//
-   
-    
-// var secondItem = document.querySelector('.list-group-item:nth-child(2)');
-//   secondItem.style.backgroundColor = 'green';
+// //parentelement//
+// console.log(itemList.parentElement);
+//  itemList.parentElement.style.backgroundColor = '#f4f4f4';
 
-//   var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
-//    thirdItem.style.color = 'white';
+//  console.log(itemList.parentElement.parentElement.parentElement);
 
-// using Queryselector all//
-var titles = document.querySelectorAll('.list-group-item');
-   console.log(titles);
-   
-   titles[1].style.color='green';  
+//  //lastelementchild
+//  console.log(itemList.lastElementChild);
+//  itemList.lastElementChild.textContent =' hello 4';
 
-  var odd= document.querySelectorAll('li:nth-child(odd)');
- for(var i=0; i<odd.length;i++){
-     odd[i].style.backgroundColor = 'green';
-}
+//  //lastchild
+//  console.log(itemList.lastChild);
+
+//  //childnodes
+// console.log(itemList.childNodes);
+
+// //firstelementchild
+// console.log(itemList.firstElementChild);
+//  itemList.firstElementChild.textContent =' hello 1';
+
+//  //firstchild
+// console.log(itemList.firstChild);
+
+// //nextSibling
+// console.log(itemList.nextSibling);
+
+// // nextelementsibling
+// console.log(itemList.nextElementSibling);
+
+// //previoussibling
+// console.log(itemList.previousSibling);
+
+// //previouselementsibling
+// console.log(itemList.previousElementSibling);
+// itemList.previousElementSibling.style.color = 'green';
+
+// //createlement//
+
+//creat a div
+var newDiv = document.createElement('div');
+
+//Add attribute
+newDiv.setAttribute('title', 'Hello Div');
+
+//creat textnode
+var newDivText = document.createTextNode('HEllo');
+
+//add text to div
+newDiv.appendChild(newDivText);
+ var container = document.querySelector('header .container');
+ var h1 = document.querySelector('header h1');
+
+ console.log(newDiv);
+
+newDiv.style.fontSize = '30px';
+
+ container.insertBefore(newDiv,h1);
+
+ 
