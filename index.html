@@ -8,20 +8,31 @@
              <button>Submit</button>   
 
         </form>
+        <ul id='listOfItems'></ul>
         <script>
             function saveToLocalStorage(event){
                 event.preventDefault();
                 const name = event.target.username.value;
                 const email = event.target.emailId.value;
-                 
+                  
                 // localStorage.setItem('name',name);
                 // localStorage.setItem('email',email);
                 const obj = {
                     name,
                     email
                 } 
-                localStorage.setItem(name,JSON.stringify(obj))
+                localStorage.setItem(obj.email,JSON.stringify(obj))
+                showUserOnScreen(obj)
             }
+
+                function showUserOnScreen(obj){
+                    const parentElem = document.getElementById('listOfItems')
+
+                    parentElem.innerHTML = parentElem.innerHTML + `<li>${obj.name}- ${obj.email}</li>`
+
+                }
+            
+
         </script>
     </body>
 </html>
