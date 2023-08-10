@@ -3,9 +3,9 @@
         
         <form onsubmit="saveToLocalStorage(event)">
             <label>Name</label>
-            <input type="text" name ="username" required/>
+            <input type="text" id="userNameInputTag" name ="username" required/>
             <label>EmailId</label>
-            <input type ="email" name="emailId" required/>
+            <input type ="email" id="emailInputTag" name="emailId" required/>
              <button>Submit</button>   
 
         </form>
@@ -74,10 +74,13 @@
                      editButton.type = "button"
                      editButton.value = 'EDIT'
                      editButton.onclick = () => {
-                         localStorage.removeItem(obj.email)
-                         parentElem.removeChild(childElem)
+                        axios.delete(`https://crudcrud.com/api/5fc293c7e1604fdbba4063c43e4eda05/vani/${obj._id}`)
+                         .then( ()=> {
+                            parentElem.removeChild(childElem)
                          document.getElementById('userNameInputTag').value =obj.name
                          document.getElementById('emailInputTag').value = obj.email
+                         });
+                         
                      }
                     childElem.appendChild(deleteButton)
                     parentElem.appendChild(childElem)
