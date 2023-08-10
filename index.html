@@ -12,7 +12,7 @@
         <ul id='listOfItems'></ul>
         <script src=" https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
         <script>
-            axios.get(" https://crudcrud.com/api/3d22ae2fc9f2421e9ce523dcce86be81/vani")
+            axios.get(" https://crudcrud.com/api/5fc293c7e1604fdbba4063c43e4eda05/vani")
                 .then((respone) => {
                     respone.data.forEach(element => {
                         showUserOnScreen(element);
@@ -39,9 +39,9 @@
 
                 
 
-              axios.post(" https://crudcrud.com/api/3d22ae2fc9f2421e9ce523dcce86be81/vani",obj)
+              axios.post(" https://crudcrud.com/api/5fc293c7e1604fdbba4063c43e4eda05/vani",obj)
                 .then((respone) => {
-                    showUserOnScreen(obj)
+                    showUserOnScreen(respone.data)
                     console.log(respone)
                 })
                 .catch((err) => {
@@ -64,8 +64,9 @@
                     deleteButton.type = "button"
                     deleteButton.value = 'Delete'
                     deleteButton.onclick = () => {
-                        localStorage.removeItem(obj.email)
-                        parentElem.removeChild(childElem)
+                         axios.delete(`https://crudcrud.com/api/5fc293c7e1604fdbba4063c43e4eda05/vani/${obj._id}`)
+                         .then(parentElem.removeChild(childElem));
+                        
 
                 
                     }
