@@ -1,5 +1,6 @@
 <html>
     <body>
+        
         <form onsubmit="saveToLocalStorage(event)">
             <label>Name</label>
             <input type="text" name ="username" required/>
@@ -11,8 +12,21 @@
         <ul id='listOfItems'></ul>
         <script src=" https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
         <script>
+            axios.get(" https://crudcrud.com/api/3d22ae2fc9f2421e9ce523dcce86be81/vani")
+                .then((respone) => {
+                    respone.data.forEach(element => {
+                        showUserOnScreen(element);
+                        console.log(element)
+                    });
+                     
+                })
+                .catch((err) => {
+                    console.log(err)
+                });
             function saveToLocalStorage(event){
                 event.preventDefault();
+
+                
                 const name = event.target.username.value;
                 const email = event.target.emailId.value;
                   
@@ -22,9 +36,12 @@
                     name: name,
                     email: email
                 } 
+
+                
+
               axios.post(" https://crudcrud.com/api/3d22ae2fc9f2421e9ce523dcce86be81/vani",obj)
                 .then((respone) => {
-                    showUserOnScreen(respone.data)
+                    showUserOnScreen(obj)
                     console.log(respone)
                 })
                 .catch((err) => {
